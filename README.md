@@ -35,3 +35,10 @@ Run the following script to download the Argovers Motion Forecasting Version2. [
 ```sh
 bash download_dataset.sh
 ```
+## Data Cleaning
+
+## Raw Feature Extracting
+
+## Training
+
+## Testing
