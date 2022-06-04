@@ -36,12 +36,12 @@ Run the following script to download the Argovers Motion Forecasting Version2. [
 bash download_dataset.sh
 ```
 ## Data Cleaning
-According to the paper, the focal agent should always be observed over the full 11 seconds, which then corresponds to 110 observations:
+According to the paper of Argoverse 2 [Link](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/4734ba6f3de83d861c3176a6273cac6d-Paper-round2.pdf), the focal agent should always be observed over the full 11 seconds, which then corresponds to 110 observations:
 ```sh
 "Within each scenario, we mark a single track as the “focal agent". Focal tracks are guaranteed to be fully observed throughout the duration of the scenario and have been specifically selected to maximize interesting interactions with map features and other nearby actors (see Section 3.3.2)"
 ```
 However, this is not the case for some scenarios (~3% of the scenarios).
-One example: Scenario '0215552f-6951-47e5-8cf6-3d1351d28957' of the validation set has a trajectory with only 104 observations.[Link](https://github.com/argoai/av2-api/issues/47)
+One example: Scenario '0215552f-6951-47e5-8cf6-3d1351d28957' of the validation set has a trajectory with only 104 observations.(https://github.com/argoai/av2-api/issues/47)
 
 ## Raw Feature Extracting
 
