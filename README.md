@@ -53,7 +53,7 @@ python3 preprocess.py
 ```  
 ## Training
 This repository contains two models: 
-1- CRAT-Pred Model: Vehicle Trajectory Prediction with Crystal Graph Convolutional Neural Networks and Multi-Head Self-Attention. [Paper]https://arxiv.org/abs/2202.04488
+1- CRAT-Pred Model: Vehicle Trajectory Prediction with Crystal Graph Convolutional Neural Networks and Multi-Head Self-Attention. [Paper](https://arxiv.org/abs/2202.04488)
 2- 
 
 ## Testing
