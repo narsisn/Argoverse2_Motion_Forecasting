@@ -47,12 +47,10 @@ To clean this scenarios from data set run the following script. This code cleans
 bash scripts/clean_data.py
 ```
 ## Raw Feature Extracting
-To preprocess and extraxct the posotion_x and position_y displacements run the following command.  
+To preprocess and extraxct the posotion_x and position_y displacements run the following command. This code creates three .pkl files for train, val and test.  
 ```sh
 python3 preprocess.py
-```
-This code creates 3 .pkl files for train, val and test
-  
+```  
 ## Training
 
 ## Testing
