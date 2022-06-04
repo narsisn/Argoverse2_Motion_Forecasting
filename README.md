@@ -13,7 +13,7 @@ Overview
   * [Testing](#testing)
 
 ## Set up Virtual Environment
-Create your virtual enviroment to run the code: 
+Create your virtual environment to run the code: 
 
 ```sh
 conda env create -f MFTF.yml
@@ -42,12 +42,12 @@ According to the paper of [Argoverse 2](https://datasets-benchmarks-proceedings.
 
 However, this is not the case for some scenarios (~3% of the scenarios).
 One example: Scenario '0215552f-6951-47e5-8cf6-3d1351d28957' of the validation set has a trajectory with only 104 observations.
-To clean this scenarios from data set run the following script. This code cleans the train and val directories. 
+To clean these scenarios from the dataset run the following script. This code cleans the train and val directories. 
 ```sh
 bash scripts/clean_data.py
 ```
 ## Raw Feature Extracting
-To preprocess and extraxct the posotion_x and position_y displacements run the following command. This code creates three .pkl files for train, val and test.  
+To preprocess and extract the posotion_x and position_y displacements run the following command. This code creates three .pkl files for train, val, and, test.  
 ```sh
 python3 preprocess.py
 ```  
@@ -56,7 +56,7 @@ This repository contains two models:
 
 **1- CRAT-Pred Model (LSTM + Graph + Multi-Head Self-Attention + Residual):** Vehicle Trajectory Prediction with Crystal Graph Convolutional Neural Networks and Multi-Head Self-Attention. [Paper](https://arxiv.org/abs/2202.04488) 
 
-**2-TGR Model (Transformer Encoder + Graph + Residual):** Replacing the LSTM + Multi-Head Self-Attention sub networks with a single Transformer Encoder
+**2-TGR Model (Transformer Encoder + Graph + Residual):** Replacing the LSTM + Multi-Head Self-Attention sub-networks with a single Transformer Encoder
 
 For training the model please use the model name, possible values for this option are train_TGR and train_Crat_pred: 
 ```sh
