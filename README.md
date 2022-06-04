@@ -11,6 +11,7 @@ Overview
   * [Raw Feature Extracting](#Extract_Raw_Features_from_arg2_Dataset)
   * [Training](#training)
   * [Testing](#testing)
+  * [Pre-trained Checkpoints](#Use Pre-trained Checkpoints)
 
 ## Set up Virtual Environment
 Create your virtual enviroment to run the code: 
@@ -58,7 +59,13 @@ This repository contains two models:
 
 **2-TGR Model (Transformer Encoder + Graph + Residual):** Replacing the LSTM + Multi-Head Self-Attention sub networks with a single Transformer Encoder
 
+For training the model please use the --model option, possible values for this option are TGR and crat-pred: 
+```sh
+python3 train.py --model=TGR --use_preprocessed=True  # for using the offline preprocessing step please use True for --use_preprocessed  
+```
+
 ## Testing
 
+## Pre-trained Checkpoints
 
 Base Code: The base code of [repository](https://github.com/schmidt-ju/crat-pred) has been used.
