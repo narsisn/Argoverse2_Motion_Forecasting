@@ -7,7 +7,7 @@ Overview
 =================
   * [Set up Virtual Environment](#Set_up_Virtual_Environment)
   * [Download Argovers2 Dataset](#Download_Argovers2_Dataset)
-  * [Data Cleaning](#Data Cleaning)
+  * [Data Cleaning](#Data_Cleaning)
   * [Raw Feature Extracting](#Extract_Raw_Features_from_arg2_Dataset)
   * [Training](#training)
   * [Testing](#testing)
@@ -52,6 +52,9 @@ To preprocess and extraxct the posotion_x and position_y displacements run the f
 python3 preprocess.py
 ```  
 ## Training
+This repository contains two models: 
+1- CRAT-Pred Model: Vehicle Trajectory Prediction with Crystal Graph Convolutional Neural Networks and Multi-Head Self-Attention. [Paper]https://arxiv.org/abs/2202.04488
+2- 
 
 ## Testing
 
