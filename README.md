@@ -5,7 +5,7 @@ IMAGE  ARCHTITECTURE
 
 Overview
 =================
-  * [Set up Virtual Environment](#Set_up__Virtual_Environment)
+  * [Set up Virtual Environment](#Set_up_Virtual_Environment)
   * [Download Argovers2 Dataset](#Download_Argovers2_Dataset)
   * [Data Cleaning](#Data_Cleaning)
   * [Raw Feature Extracting](#Extract_Raw_Features_from_arg2_Dataset)
