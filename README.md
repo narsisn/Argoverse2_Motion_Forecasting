@@ -11,7 +11,6 @@ Overview
   * [Raw Feature Extracting](#Extract_Raw_Features_from_arg2_Dataset)
   * [Training](#training)
   * [Testing](#testing)
-  * [Pre-trained Checkpoints](#Use Pre-trained Checkpoints)
 
 ## Set up Virtual Environment
 Create your virtual enviroment to run the code: 
@@ -70,7 +69,5 @@ To test model on validation data on models use:
 python3 test_TGR.py --ckpt_path=/path/to/checkpoints --split=val 
 #Also you can use this file to generate prediction on test dataset. simply use --split-test
 ```
-
-## Pre-trained Checkpoints
 
 Base Code: The base code of [repository](https://github.com/schmidt-ju/crat-pred) has been used.
