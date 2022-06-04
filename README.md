@@ -65,6 +65,12 @@ python3 train_TGR.py --use_preprocessed=True  # for using the offline preprocess
 ```
 
 ## Testing
+To test model on validation data on models use: 
+```sh
+python3 test_TGR.py --ckpt_path=/path/to/checkpoints --split=val 
+
+Also you can use this file to generate prediction on test dataset. simply use --split-test
+```
 
 ## Pre-trained Checkpoints
 
