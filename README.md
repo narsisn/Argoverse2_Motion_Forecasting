@@ -59,7 +59,7 @@ This repository contains two models:
 
 **2-TGR Model (Transformer Encoder + Graph + Residual):** Replacing the LSTM + Multi-Head Self-Attention sub networks with a single Transformer Encoder
 
-For training the model please use the model name, possible values for this option are train_TGR and train_crat_pred: 
+For training the model please use the model name, possible values for this option are train_TGR and train_Crat_pred: 
 ```sh
 python3 train_TGR.py --use_preprocessed=True  # for using the offline preprocessing step please use True for --use_preprocessed  
 ```
