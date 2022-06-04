@@ -1,2 +1,2 @@
-# Argoverse2_Motion_Forecasting
-MFTF: Motion Forecasting Using Transformers
+# Argoverse2 Motion Forecasting
+**MFTF: Motion Forecasting Using Transformers**
