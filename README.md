@@ -30,4 +30,4 @@ pip3 install  av2
 ```
 ## Download Argovers2 Dataset
 
-Run the following script to download the Argovers Motion Forecasting Version2. [Link] (https://github.com/argoai/av2-api/blob/main/src/av2/datasets/motion_forecasting/README.md)
+Run the following script to download the Argovers Motion Forecasting Version2. [Link](https://github.com/argoai/av2-api/blob/main/src/av2/datasets/motion_forecasting/README.md)
