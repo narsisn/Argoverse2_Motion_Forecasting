@@ -1,0 +1,46 @@
+papers : 
+https://arxiv.org/pdf/2103.11624.pdf
+https://arxiv.org/pdf/2007.13732.pdf
+https://arxiv.org/pdf/2110.10436.pdf --- survey
+https://ieeexplore.ieee.org/abstract/document/9756903 --- survey
+https://arxiv.org/pdf/2203.01880.pdf
+https://arxiv.org/pdf/2109.06446.pdf
+https://arxiv.org/pdf/2202.04488.pdf
+https://arxiv.org/pdf/2112.01177.pdf
+https://arxiv.org/pdf/2008.08294.pdf
+https://ieeexplore.ieee.org/abstract/document/9412190 good
+https://openaccess.thecvf.com/content/CVPR2021/papers/Luo_Self-Supervised_Pillar_Motion_Learning_for_Autonomous_Driving_CVPR_2021_paper.pdf
+file:///home/yazahra/Documents/phd_programm/others/paper/Motion_Forecasting/mathematics-09-00660-v2.pdf
+
+
+https://openaccess.thecvf.com/content/CVPR2021/papers/Kim_LaPred_Lane-Aware_Prediction_of_Multi-Modal_Future_Trajectories_of_Dynamic_Agents_CVPR_2021_paper.pdf
+
+Links :
+https://github.com/argoai/av2-api
+https://github.com/uber-research/LaneGCN
+https://github.com/decisionforce/mmTransformer
+https://github.com/jagjeet-singh/argoverse-forecasting
+https://github.com/schmidt-ju/crat-pred
+https://github.com/Henry1iu/TNT-Trajectory-Predition
+https://github.com/FGiuliari/Trajectory-Transformer
+https://github.com/wqi/WIMP
+https://github.com/curow/vehicle-trajectory-prediction
+
+
+
+-- time series forecasting
+https://towardsdatascience.com/how-to-make-a-pytorch-transformer-for-time-series-forecasting-69e073d4061e
+https://miro.medium.com/max/1400/1*fKbqqiSAVg3a7PV2DSUn2Q.png
+https://github.com/allen-chiang/Time-Series-Transformer
+https://github.com/qingsongedu/time-series-transformers-review
+https://towardsdatascience.com/multivariate-time-series-forecasting-with-transformers-384dc6ce989b
+https://towardsdatascience.com/illustrated-guide-to-transformers-step-by-step-explanation-f74876522bc0
+
+
+
+dataset:
+https://www.argoverse.org/av2.html
+
+
+commands:
+# model = model.load_from_checkpoint('lightning_logs/version_24_TGR_20_BE_BAD/checkpoints/epoch=0-loss_train=148.84-loss_val=140.98-ade1_val=2.44-fde1_val=6.41-ade_val=2.45-fde_val=6.09.ckpt')

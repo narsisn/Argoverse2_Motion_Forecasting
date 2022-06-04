@@ -44,7 +44,7 @@ However, this is not the case for some scenarios (~3% of the scenarios).
 One example: Scenario '0215552f-6951-47e5-8cf6-3d1351d28957' of the validation set has a trajectory with only 104 observations.
 To clean these scenarios from the dataset run the following script. This code cleans the train and val directories. 
 ```sh
-bash scripts/clean_data.py
+python3 scripts/clean_data.py
 ```
 ## Raw Feature Extracting
 To preprocess and extract the posotion_x and position_y displacements run the following command. This code creates three .pkl files for train, val, and, test.  
