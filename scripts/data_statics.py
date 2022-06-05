@@ -26,3 +26,19 @@ for plist in path_list:
     print("max is ", max(std))
     print("mean is ", sum(std)/len(std))
 
+
+df = pd.read_csv('train.csv')
+print("train_decribe: ", df.describe())
+print(df.round(1).value_counts())
+df = df.sort_values(df.columns[0])
+df.round(1).value_counts().to_csv('train_stat.csv')
+
+df = pd.read_csv('val.csv')
+print("val_decribe: ", df.describe())
+df = df.sort_values(df.columns[0])
+df.round(1).value_counts().to_csv('val_stat.csv')
+
+df = pd.read_csv('test.csv')
+print("test_decribe: ", df.describe())
+df = df.sort_values(df.columns[0])
+df.round(1).value_counts().to_csv('test_stat.csv')
