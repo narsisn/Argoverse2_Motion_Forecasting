@@ -75,7 +75,7 @@ class CratPred(pl.LightningModule):
         parser_model.add_argument("--latent_size", type=int, default=128)
         parser_model.add_argument("--num_preds", type=int, default=60)
         parser_model.add_argument("--mod_steps", type=list, default=[1, 5])
-        parser_model.add_argument("--mod_freeze_epoch", type=int, default=102)
+        parser_model.add_argument("--mod_freeze_epoch", type=int, default=36)
 
         return parent_parser
 
@@ -170,7 +170,7 @@ class CratPred(pl.LightningModule):
         # Trigger weight freeze and optimizer reinit on mod_freeze_epoch
         if self.current_epoch == self.args.mod_freeze_epoch:
             self.freeze()
-            self.trainer.accelerator_backend.setup_optimizers(self.trainer)
+            self.trainer.accelerator.setup_optimizers(self.trainer)
 
 
         # Set learning rate according to current epoch

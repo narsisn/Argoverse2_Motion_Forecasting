@@ -163,7 +163,7 @@ class TMFModel(pl.LightningModule):
 
     def configure_optimizers(self):
 
-        # self.args.mod_freeze_epoch = 0  # addeddddd 
+        
         if self.current_epoch == self.args.mod_freeze_epoch:
             optimizer = torch.optim.Adam(
                 filter(lambda p: p.requires_grad, self.parameters()), weight_decay=self.args.wd)
@@ -173,12 +173,11 @@ class TMFModel(pl.LightningModule):
         return optimizer
 
     def on_train_epoch_start(self):
- 
-        # self.args.mod_freeze_epoch = 0 # addeddd
+        
         # Trigger weight freeze and optimizer reinit on mod_freeze_epoch
         if self.current_epoch == self.args.mod_freeze_epoch:
             self.freeze()
-            self.trainer.accelerator_backend.setup_optimizers(self.trainer)
+            self.trainer.accelerator.setup_optimizers(self.trainer)
 
 
         # Set learning rate according to current epoch
@@ -198,7 +197,6 @@ class TMFModel(pl.LightningModule):
             if epoch < lr_epoch:
                 break
             lr_index += 1
-        
         return self.args.lr_values[lr_index]
 
     def validation_step(self, val_batch, batch_idx):
@@ -403,6 +401,7 @@ class DecoderResidual(nn.Module):
             for i in range(self.args.mod_steps[0], sum(self.args.mod_steps)):
                 sample_wise_out.append(self.output[i](decoder_in))
         else:
+            
             sample_wise_out.append(self.output[0](decoder_in))
             
 
