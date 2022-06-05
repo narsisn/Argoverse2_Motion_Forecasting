@@ -401,7 +401,7 @@ class DecoderResidual(nn.Module):
             for i in range(self.args.mod_steps[0], sum(self.args.mod_steps)):
                 sample_wise_out.append(self.output[i](decoder_in))
         else:
-            
+
             sample_wise_out.append(self.output[0](decoder_in))
             
 
@@ -431,6 +431,7 @@ class PredictionNet(nn.Module):
         self.norm2 = nn.GroupNorm(1, self.latent_size)
 
         self.output_fc = nn.Linear(self.latent_size, args.num_preds * 2)
+        
 
     def forward(self, prednet_in):
         # Residual layer
