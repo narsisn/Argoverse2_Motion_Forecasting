@@ -11,6 +11,7 @@ Overview
   * [Raw Feature Extracting](#Extract_Raw_Features_from_arg2_Dataset)
   * [Training](#training)
   * [Testing](#testing)
+  * [Checkpoints](#Checkpoints)
 
 ## Set up Virtual Environment
 Create your virtual environment to run the code: 
