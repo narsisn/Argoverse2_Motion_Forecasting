@@ -70,5 +70,10 @@ To test model on validation data on models use:
 python3 test_TGR.py --ckpt_path=/path/to/checkpoints --split=val 
 #Also you can use this file to generate prediction on test dataset. simply use --split-test
 ```
+## Checkpoints 
+```sh
+#Regenerate the evaluation parameters using pre-trained checkpoints: TGR.ckpt and Crat_Pred.ckpt
+python3 test_TGR.py --ckpt_path=checkpoints/TGR.ckpt --split=val --use_preprocessed=True  
+```
 
 Base Code: The base code of [repository](https://github.com/schmidt-ju/crat-pred) has been used.
