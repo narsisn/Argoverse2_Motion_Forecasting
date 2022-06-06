@@ -48,13 +48,13 @@ class TMFModel(pl.LightningModule):
                 root_path, "dataset", "argoverse", "test"))
         parser_dataset.add_argument(
             "--train_split_pre", type=str, default=os.path.join(
-                root_path, "dataset", "argoverse", "train_pre.pkl"))
+                root_path, "dataset", "argoverse", "train_pre_clean.pkl"))
         parser_dataset.add_argument(
             "--val_split_pre", type=str, default=os.path.join(
-                root_path, "dataset", "argoverse", "val_pre.pkl"))
+                root_path, "dataset", "argoverse", "val_pre_clean.pkl"))
         parser_dataset.add_argument(
             "--test_split_pre", type=str, default=os.path.join(
-                root_path, "dataset", "argoverse", "test_pre.pkl"))
+                root_path, "dataset", "argoverse", "test_pre_clean.pkl"))
         parser_dataset.add_argument(
             "--reduce_dataset_size", type=int, default=0)
         parser_dataset.add_argument(
@@ -67,7 +67,7 @@ class TMFModel(pl.LightningModule):
         parser_training.add_argument(
             "--lr_values", type=list, default=[1e-3, 1e-4, 1e-3 , 1e-4])
         parser_training.add_argument(
-            "--lr_step_epochs", type=list, default=[5, 20, 68])
+            "--lr_step_epochs", type=list, default=[10, 20, 68])
         parser_training.add_argument("--wd", type=float, default=0.01)
         parser_training.add_argument("--batch_size", type=int, default=32)
         parser_training.add_argument("--val_batch_size", type=int, default=32)

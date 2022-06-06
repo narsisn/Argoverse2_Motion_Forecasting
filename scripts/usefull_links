@@ -45,3 +45,6 @@ https://www.argoverse.org/av2.html
 commands:
 # model = model.load_from_checkpoint('lightning_logs/version_24_TGR_20_BE_BAD/checkpoints/epoch=0-loss_train=148.84-loss_val=140.98-ade1_val=2.44-fde1_val=6.41-ade_val=2.45-fde_val=6.09.ckpt')
 some code
+
+slides :
+http://www.cs.toronto.edu/~byang/slides/LaneGCN.pdf
