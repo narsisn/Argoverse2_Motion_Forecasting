@@ -1,10 +1,10 @@
 # MFTF: Map Free Motion Forecasting Using Transformers
 **Argoverse2 Motion Forecasting**
 
-##TGR Model 
+## TGR Model 
 ![TGR](https://user-images.githubusercontent.com/41056415/172166875-208c157b-9af9-4956-a8f2-198cfed98da3.jpg)
 
-
+## MFTF Model 
 ![TR](https://user-images.githubusercontent.com/41056415/173300977-7a2b2cae-6f03-4e22-8cfe-7836e2b8991c.png)
 
 Overview
