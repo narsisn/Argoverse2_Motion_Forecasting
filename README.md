@@ -10,8 +10,8 @@
 Overview
 =================
   * [Set up Virtual Environment](#set_up_virtual_environment)
-  * [Download Argovers2 Dataset](#Download_Argovers2_Dataset)
-  * [Data Cleaning](#Data_Cleaning)
+  * [Download Argovers2 Dataset](#download_argovers2_dataset)
+  * [Data Cleaning](#data_cleaning)
   * [Raw Feature Extracting](#Extract_Raw_Features_from_arg2_Dataset)
   * [Training](#training)
   * [Testing](#testing)
