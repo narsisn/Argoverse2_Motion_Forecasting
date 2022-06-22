@@ -20,10 +20,10 @@ root_path = os.path.dirname(os.path.dirname(file_path))
 
 class TMFModel(pl.LightningModule):
     def __init__(self, args):
-        super(TMFModel, self).__init__()
+        super(TMFModel, self).__init__() # allows us to avoid using the base class name explicitly.
         self.args = args
 
-        self.save_hyperparameters()
+        self.save_hyperparameters() # It will enable Lightning to store all the provided arguments under the self.hparams attribute. These hyperparameters will also be stored within the model checkpoint, which simplifies model re-instantiation after training.
         self.linear_embedding = LinearEmbedding(3,self.args)
         self.pos_encoder= PositionalEncoding1D(self.args.latent_size)
         self.encoder_transformer = EncoderTransformer(self.args)
@@ -117,7 +117,7 @@ class TMFModel(pl.LightningModule):
 
         out = out_linear.view(len(displ), 1, -1, self.args.num_preds, 2)
 
-        # Iterate over each batch and transform predictions into the global coordinate frame
+        # Iterate over each batch and transform predictions into the global coordinate frame, Matrix product of two tensors.
         for i in range(len(out)):
             out[i] = torch.matmul(out[i], rotation[i]) + origin[i].view(
                 1, 1, 1, -1
@@ -428,7 +428,7 @@ class PredictionNet(nn.Module):
         self.norm1 = nn.GroupNorm(1, self.latent_size)
 
         self.weight2 = nn.Linear(self.latent_size, self.latent_size)
-        self.norm2 = nn.GroupNorm(1, self.latent_size)
+        self.norm2 = nn.GroupNorm(1, self.latent_size) # Batch normalization solves a major problem called internal covariate shift. 
 
         self.output_fc = nn.Linear(self.latent_size, args.num_preds * 2)
         

@@ -1,13 +1,8 @@
 
 import pandas as pd
 import numpy as np
-from functools import lru_cache
 from pathlib import Path
 
-# If the machine has enough RAM one might try if this speeds up loading
-@lru_cache(300000)
-def _read_csv(path):
-    return pd.read_csv(path)
 
 
 class ArgoDataExtractor:
@@ -148,7 +143,7 @@ class ArgoDataExtractor:
 
         sample["displ"], sample["centers"] = self.get_displ(sample["past_trajs"])
         sample["origin"] = origin
-        # We already return the inverse transformation matrix
+        # We already return the inverse transformation matrix, Compute the (multiplicative) inverse of a matrix
         sample["rotation"] = np.linalg.inv(rotation)
 
         return sample
