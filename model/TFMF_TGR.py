@@ -142,7 +142,7 @@ class TMFModel(pl.LightningModule):
         # Keep in mind, that there are multiple trajectories in each sample, but only the first one ([0]) corresponds
         # to the target agent
         gt_target = torch.cat([torch.unsqueeze(x[0], 0) for x in gts], 0)
-        gt_target = torch.repeat_interleave(gt_target, num_mods, dim=0)
+        gt_target = torch.repeat_interleave(gt_target, num_mods, dim=0) # repeate the gt for all ks 
 
         loss_single = self.reg_loss(preds, gt_target)
         loss_single = torch.sum(torch.sum(loss_single, dim=2), dim=1)
@@ -389,7 +389,7 @@ class DecoderResidual(nn.Module):
         for i in range(sum(args.mod_steps)):
             output.append(PredictionNet(args))
 
-        self.output = nn.ModuleList(output)
+        self.output = nn.ModuleList(output) # is just like a Python list. It was designed to store any desired number of nn.Module’s
 
     def forward(self, decoder_in, is_frozen):
         sample_wise_out = []
