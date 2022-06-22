@@ -8,6 +8,7 @@ https://arxiv.org/pdf/2109.06446.pdf
 https://arxiv.org/pdf/2202.04488.pdf
 https://arxiv.org/pdf/2112.01177.pdf
 https://arxiv.org/pdf/2008.08294.pdf
+https://arxiv.org/pdf/2106.08417.pdf --- transformer google paper 
 https://ieeexplore.ieee.org/abstract/document/9412190 good
 https://openaccess.thecvf.com/content/CVPR2021/papers/Luo_Self-Supervised_Pillar_Motion_Learning_for_Autonomous_Driving_CVPR_2021_paper.pdf
 file:///home/yazahra/Documents/phd_programm/others/paper/Motion_Forecasting/mathematics-09-00660-v2.pdf
@@ -52,3 +53,6 @@ some code
 
 slides :
 http://www.cs.toronto.edu/~byang/slides/LaneGCN.pdf
+
+python3 train_TGR.py --use_preprocessed=True
+python3 test_TGR.py --split=val --use_preprocessed=True --ckpt_path=checkpoints/TGR.ckpt

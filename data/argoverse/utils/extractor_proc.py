@@ -30,8 +30,12 @@ class ArgoDataExtractor:
         for i in range(len(res)):
             # Replace  0 in first dimension with 2
             diff = data[i, 1:, :2] - data[i, :-1, :2]
-
-            # Sliding window (size=2) with the valid flag
+            
+            """ we only consider vehicles that are observable at t = 0 and handle vehicles that are not
+                observed over the full history horizon Th by concatenating a binary flag b.The flag indicates whether there was a
+                displacement of vehicle i observed at timestep t
+                """
+            # Sliding window (size=2) with the valid flag , linear convolution of two one-dimensional sequences
             valid = np.convolve(data[i, :, 2], np.ones(2), "valid")
             # Valid entries have the sum=2 (they get flag=1=valid), unvalid entries have the sum=1 or sum=2 (they get flag=0)
             valid = np.select(
@@ -104,7 +108,7 @@ class ArgoDataExtractor:
                 continue
 
             rt[ts, :2] = tt
-            rt[ts, 2] = 1.0
+            rt[ts, 2] = 1.0 # the flag columns of each agent at time steps where the agent is observed is considered 1 
             res_trajs.append(rt)
 
 
@@ -112,9 +116,13 @@ class ArgoDataExtractor:
         res_trajs = np.asarray(res_trajs, np.float32)
         res_gt = res_trajs[:, 50:].copy()
         origin = res_trajs[0, 49, :2].copy()
-      
+        """ During preprocessing, coordinate transformation of each sequence into a local target vehicle coordinate frame is done. 
+        This common preprocessing step is also performed by other approaches [3], [25] benchmarked on the Argoverse dataset. 
+        Therefore, the coordinates in each sequence are transformed into a coordinate frame originated at the position of the target vehicle at t = 0.
+         The orientation of the positive x-axis is given by the vector described by the difference between the position at t = 0 and t = −1.
+"""
 
-        rotation = np.eye(2, dtype=np.float32)
+        rotation = np.eye(2, dtype=np.float32) #The eye tool returns a 2-D array with  1’s as the diagonal and  0’s elsewhere.  
         theta = 0
 
         if self.align_image_with_target_x:
@@ -123,7 +131,7 @@ class ArgoDataExtractor:
             rotation = np.asarray([[np.cos(theta), -np.sin(theta)],
                              [np.sin(theta), np.cos(theta)]], np.float32)
 
-        res_trajs[:, :, :2] = np.dot(res_trajs[:, :, :2] - origin, rotation)
+        res_trajs[:, :, :2] = np.dot(res_trajs[:, :, :2] - origin, rotation) #Dot product of two arrays
         res_trajs[np.where(res_trajs[:, :, 2] == 0)] = 0
 
         res_fut_trajs = res_trajs[:, 50:].copy()
