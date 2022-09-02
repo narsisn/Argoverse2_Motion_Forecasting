@@ -69,7 +69,13 @@ python3 train_TGR.py --use_preprocessed=True  # for using the offline preprocess
 ```
 
 ## Testing
-To test model on validation data on models use: 
+To test model on validation data on models:
+
+1- Please comment line 217 in the following file:
+https://github.com/argoai/argoverse-api/blob/master/argoverse/evaluation/eval_forecasting.py 
+First, find the path of this file in your system after installing the Argoverse api_1 package. (pip3 install git+https://github.com/argoai/argoverse-api.git)
+Then comment the line 217 which uses the Map information to compute the DAC parameter. 
+
 ```sh
 python3 test_TGR.py --ckpt_path=/path/to/checkpoints --split=val 
 #Also you can use this file to generate prediction on test dataset. simply use --split-test
